@@ -8,15 +8,18 @@
     tools:context=".RepairOrderActivity"
     tools:layout_editor_absoluteY="56dp">
 
-    <TextView
-        android:id="@+id/textView7"
+    <EditText
+        android:id="@+id/etPaint4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="180dp"
-        android:text="Technician"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="232dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@id/textView6"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -57,6 +60,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="180dp"
+        android:text="Technician"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="244dp"
+        android:text="Inspection"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/etPaint"
         android:layout_width="wrap_content"
@@ -68,6 +93,20 @@
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@id/textView6"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etPaint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="104dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="@id/textView6"
         app:layout_constraintTop_toTopOf="parent" />
 

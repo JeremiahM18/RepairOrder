@@ -19,6 +19,7 @@ public class RepairOrderActivity extends AppCompatActivity {
 
     TextView totalTextView;
     TextView subtotalTextView;
+    TextView taxTextView;
     EditText orderEditText;
     EditText paintEditText;
     EditText laborEditText;
@@ -33,11 +34,26 @@ public class RepairOrderActivity extends AppCompatActivity {
 
             double number = generator.nextDouble();
             String v1 = "$ " + number;
-            subtotalTextView.setText(v1);
+            //subtotalTextView.setText(v1);
 
             String orderTypeV = orderEditText.getText().toString();
             String laborV = laborEditText.getText().toString();
             String partsV = partsEditText.getText().toString();
+
+            Double ot = Double.parseDouble(orderTypeV);
+            Double l = Double.parseDouble(laborV);
+            Double p = Double.parseDouble(partsV);
+
+            double sum = ot + l + p;
+            String v2 = "$ " + sum;
+            subtotalTextView.setText(v2);
+
+            double tax = sum * 0.08;
+            String v4 = "$ " + tax;
+            taxTextView.setText(v4);
+
+            String v3 = "$ " + (tax + sum);
+            totalTextView.setText(v3);
 
 
             Log.i("TEST", "Button Clicked");
@@ -60,6 +76,7 @@ public class RepairOrderActivity extends AppCompatActivity {
 
         totalTextView = findViewById(R.id.total_price);
         subtotalTextView = findViewById(R.id.subtotalPrice);
+        taxTextView = findViewById(R.id.taxPrice);
         submitButton = findViewById(R.id.submit);
         submitButton.setOnClickListener(buttonListener); //Registering the listener to the button
         orderEditText = findViewById(R.id.orderInput);

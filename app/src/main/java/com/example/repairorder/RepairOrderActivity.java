@@ -2,6 +2,9 @@ package com.example.repairorder;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -14,7 +17,32 @@ import java.util.Random;
 
 public class RepairOrderActivity extends AppCompatActivity {
 
-    double numbers = 0.0;
+    TextView totalTextView;
+    TextView subtotalTextView;
+    EditText orderEditText;
+    EditText paintEditText;
+    EditText laborEditText;
+    EditText partsEditText;
+    EditText inspectorEditText;
+    Button submitButton;
+
+    View.OnClickListener buttonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Random generator = new Random();
+
+            double number = generator.nextDouble();
+            String v1 = "$ " + number;
+            subtotalTextView.setText(v1);
+
+            String orderTypeV = orderEditText.getText().toString();
+            String laborV = laborEditText.getText().toString();
+            String partsV = partsEditText.getText().toString();
+
+
+            Log.i("TEST", "Button Clicked");
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +58,16 @@ public class RepairOrderActivity extends AppCompatActivity {
 
 
 
-        TextView totalTextView = findViewById(R.id.total);
+        totalTextView = findViewById(R.id.total_price);
+        subtotalTextView = findViewById(R.id.subtotalPrice);
+        submitButton = findViewById(R.id.submit);
+        submitButton.setOnClickListener(buttonListener); //Registering the listener to the button
+        orderEditText = findViewById(R.id.orderInput);
+        paintEditText = findViewById(R.id.technicianInput);
+        laborEditText = findViewById(R.id.laborInput);
+        partsEditText = findViewById(R.id.partsInput);
+        inspectorEditText = findViewById(R.id.paintInput);
 
-        String value = totalTextView.getText().toString();
 
-        Random gen = new Random();
-
-        double random = gen.nextDouble();
-        String v1 = "$ " + random;
-        totalTextView.setText(v1);
-
-        Log.i("TEST", value);
     }
 }

@@ -55,9 +55,10 @@
         android:id="@+id/orderTypeSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:minHeight="32dp"
         android:spinnerMode="dropdown"
         android:entries="@array/order_type_categories"
-        app:layout_marginEnd="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintStart_toEndOf="@id/guideInputs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBaseline_toBaselineOf="@id/orderType"/>
@@ -208,80 +209,70 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totalP"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/total_price"
+        app:layout_constraintBaseline_toBaselineOf="@id/total_price"/>
+
+    <TextView
+        android:id="@+id/taxPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/taxPrice"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/total_price"/>
+
+    <TextView
+        android:id="@+id/tax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tax"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/taxPrice"
+        app:layout_constraintBaseline_toBaselineOf="@id/taxPrice" />
+
+
 
     <TextView
         android:id="@+id/subtotalPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/subtotalPrice"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/taxPrice"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/taxPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="70dp"
-        android:text="@string/taxPrice"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subtotalPrice" />
-
-    <TextView
-        android:id="@+id/total_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/totalP"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/taxPrice" />
 
     <TextView
         android:id="@+id/subtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/subtotal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/subtotalPrice" />
-
-    <TextView
-        android:id="@+id/tax"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="70dp"
-        android:text="@string/tax"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/subtotalPrice"
-        app:layout_constraintTop_toBottomOf="@id/subtotal" />
-
-    <TextView
-        android:id="@+id/total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/total"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tax" />
+        app:layout_constraintBaseline_toBaselineOf="@id/subtotalPrice"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

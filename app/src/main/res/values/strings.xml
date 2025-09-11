@@ -22,7 +22,7 @@
 
     <string-array name="order_type_categories">
         <item>Select order type:</item>
-        <item>Repair></item>
+        <item>Repair</item>
         <item>Maintenance</item>
         <item>Installation</item>
         <item>Diagnostics</item>

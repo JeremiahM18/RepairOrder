@@ -76,6 +76,24 @@ public class RepairOrderActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         orderSpinner.setAdapter(adapter);
 
+        /*
+        Populate With ArrayList instead
+
+        ArrayList<String> orderTypes = new ArrayList<>();
+        orderTypes.add("Select order type:");
+        orderTypes.add("Diagnostics");
+        orderTypes.add("Repairs");
+        orderTypes.add("Installation");
+        orderTypes.add("Maintenance");
+        orderTypes.add("Other");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, orderTypes);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        orderSpinner.setAdapter(adapter);
+         */
+
+
         // Listen for selections
         orderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

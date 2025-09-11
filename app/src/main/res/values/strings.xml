@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">RepairOrder</string>
     <string name="header">Repair Order</string>
+
     <string name="name_label">Name!!!</string>
     <string name="order_type">Order Type</string>
     <string name="technician">Technician</string>
@@ -12,4 +13,13 @@
     <string name="tax">Tax</string>
     <string name="total">Total</string>
     <string name="submit">SUBMIT</string>
+
+    <string-array name="order_type_categories">
+        <item>Select order type:</item>
+        <item>Repair></item>
+        <item>Maintenance</item>
+        <item>Installation</item>
+        <item>Diagnostics</item>
+        <item>Other</item>
+    </string-array>
 </resources>

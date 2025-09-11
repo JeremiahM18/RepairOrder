@@ -6,109 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RepairOrderActivity"
-    tools:layout_editor_absoluteY="56dp">
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/labor"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideInputs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="436dp"
-        android:text="@string/labor"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/parts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="372dp"
-        android:text="@string/parts"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/inspector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="244dp"
-        android:text="@string/inspector"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/paintInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="296dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textAlignment="viewStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@id/orderType"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/inspectorInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="232dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textAlignment="viewStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@id/orderType"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/partsInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="360dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textAlignment="viewStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@id/orderType"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/laborInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="424dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textAlignment="viewStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@id/orderType"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="120dp"/>
 
     <TextView
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="@string/header"
         android:textAlignment="center"
         android:textColor="#2B2D30"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,10 +33,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Enter details below"
+        android:text="@string/subheader"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header" />
 
@@ -128,72 +43,178 @@
         android:id="@+id/orderType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="116dp"
         android:text="@string/order_type"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:labelFor="@id/orderTypeSpinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/subheader" />
+
+    <Spinner
+        android:id="@+id/orderTypeSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:entries="@array/order_type_categories"
+        app:layout_marginEnd="16dp"
+        app:layout_constraintStart_toEndOf="@id/guideInputs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/orderType"/>
 
     <TextView
         android:id="@+id/technician"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="32dp"
         android:text="@string/technician"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:labelFor="@id/technicianInput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/orderType" />
+
+    <EditText
+        android:id="@+id/technicianInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:importantForAutofill="yes"
+        android:textSize="18sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toEndOf="@id/guideInputs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/technician"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/inspector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/inspector"
+        android:textSize="18sp"
+        android:labelFor="@id/inspectorInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/technician" />
+
+    <EditText
+        android:id="@+id/inspectorInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:importantForAutofill="yes"
+        android:textSize="18sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toEndOf="@id/guideInputs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/inspector"
+        android:layout_marginEnd="16dp"/>
 
     <TextView
         android:id="@+id/paint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="308dp"
         android:text="@string/paint"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:labelFor="@id/paintInput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/inspector"
+        android:layout_marginTop="32dp"/>
 
     <EditText
-        android:id="@+id/technicianInput"
+        android:id="@+id/paintInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:importantForAutofill="yes"
+        android:textSize="18sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toEndOf="@id/guideInputs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/paint"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/parts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="168dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textAlignment="viewStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="@id/orderType"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/parts"
+        android:textSize="18sp"
+        android:labelFor="@id/partsInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/paint" />
 
     <EditText
-        android:id="@+id/orderInput"
+        android:id="@+id/partsInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:importantForAutofill="yes"
+        android:textSize="18sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toEndOf="@id/guideInputs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/parts"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/labor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="104dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textAlignment="viewStart"
+        android:layout_marginStart="8dp"
+        android:text="@string/labor"
+        android:textSize="18sp"
+        android:labelFor="@id/laborInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/parts"
+        android:layout_marginTop="32dp"/>
+
+    <EditText
+        android:id="@+id/laborInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:importantForAutofill="yes"
+        android:textSize="18sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toEndOf="@id/guideInputs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@id/orderType"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@id/labor"
+        android:layout_marginEnd="16dp"/>
+
+<!--    <EditText-->
+<!--        android:id="@+id/orderInput"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="124dp"-->
+<!--        android:layout_marginTop="104dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:textAlignment="viewStart"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.521"-->
+<!--        app:layout_constraintStart_toStartOf="@id/orderType"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="50dp"
-        android:text="SUBMIT"
+        android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/subtotalPrice"
@@ -201,7 +222,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="120dp"
-        android:text="TextView"
+        android:text="@string/subtotalPrice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -212,7 +233,7 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="70dp"
-        android:text="TextView"
+        android:text="@string/taxPrice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subtotalPrice" />
@@ -224,7 +245,7 @@
         android:layout_marginTop="29dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="20dp"
-        android:text="TextView"
+        android:text="@string/totalP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/taxPrice" />
